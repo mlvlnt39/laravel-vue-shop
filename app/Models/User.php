@@ -17,11 +17,22 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
+    protected $table = 'users';
+    protected $guarded = false;
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 2;
+
+    static function getGenders(){
+        return[
+            self::GENDER_MALE => 'Мужской',
+            self::GENDER_FEMALE => 'Женский',
+        ];
+    }
+
+    public function getGenderTitleAttribute() {
+        return self::getGenders()[$this->gender];
+    }
 
     /**
      * The attributes that should be hidden for serialization.
