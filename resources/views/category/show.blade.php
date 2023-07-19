@@ -23,7 +23,37 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex p-3">
+                            <div class="mr-3">
+                                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-primary">Редактировать</a>
+                            </div>
+                            <form action="{{ route('category.delete', $category->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" class="btn btn-danger" value="Удалить">
+                            </form>
+                        </div>
 
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <tbody>
+                                    <tr data-widget="expandable-table" aria-expanded="false">
+                                        <td>#</td>
+                                        <td>{{ $category->id }}</td>
+                                    </tr>
+                                    <tr data-widget="expandable-table" aria-expanded="false">
+                                        <td>Наименование</td>
+                                        <td>{{ $category->title }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
             <!-- /.row -->
 

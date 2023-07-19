@@ -23,7 +23,34 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="{{ route('category.create') }}" class="btn btn-primary">Добавить</a>
+                        </div>
 
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Наименование</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($categories as $category)
+                                <tr data-widget="expandable-table" aria-expanded="false">
+                                    <td>{{ $category->id }}</td>
+                                    <td><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
             <!-- /.row -->
 

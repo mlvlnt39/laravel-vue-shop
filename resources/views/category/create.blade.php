@@ -23,7 +23,16 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
+                <form action="{{ route('category.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group" >
+                        <input class="form-control" name="title" type="text" placeholder="Наименование">
+                    </div>
 
+                    <div class="form-group" >
+                        <input class="btn btn-primary" type="submit" value="Добавить">
+                    </div>
+                </form>
             </div>
             <!-- /.row -->
 
