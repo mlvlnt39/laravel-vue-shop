@@ -9,6 +9,6 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        // TODO: Implement __invoke() method.
+        return view('category.create');
     }
 }

@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
 
             'title' => 'required|string'
-                    
+
         ];
     }
 }
